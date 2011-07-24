@@ -1,0 +1,159 @@
+body {
+	background-color: #d2d2d2;
+	font-family: 'helvetica nueue', arial, sans-serif;
+	font-size: 100%;
+	min-width: 300px;
+}
+
+fieldset {
+	background-color: #f9f9f9;
+	background-image: -moz-linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+	background-image: -o-linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+	background-image: -webkit-linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+	background-image: linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+	border: 1px solid #bebebe;
+	border-radius: 8px;
+	margin: 20px auto 0 auto;
+	max-width: 420px;
+	padding: 12px 0;
+	width: 60%;
+}
+
+	fieldset div {
+		margin: 0 auto;
+		padding: 5px 0 8px 0;
+		text-align: left;
+		width: 90%;
+	}
+	
+	fieldset div:last-child {
+		padding: 8px 0 0 0;
+		position: relative;
+		text-align: left;
+	}
+
+label {
+	color: #353535;
+	display: block;
+	margin-bottom: 4px;
+}
+
+	label.required:after {
+		color: #ba1600;
+		content: ' *';
+	}
+
+input {
+	padding: 3px;
+	font-size: 0.75em;
+	width: 94%;
+}
+
+input:invalid {	
+	
+	/* Overwrite moz default */
+	box-shadow: none;
+	
+	/* Moz default */
+	/* box-shadow: 0 0 1.5px 1px red; */
+}
+
+	input[type='submit'] {
+		background-color: #22bc63;
+		background-image: -moz-linear-gradient(#22bc30 43%, #109f17 100%);
+		background-image: -o-linear-gradient(#22bc30 43%, #109f17 100%);
+		background-image: -webkit-linear-gradient(#22bc30 43%, #109f17 100%);
+		background-image: linear-gradient(#22bc30 43%, #109f17 100%);
+		border: 1px solid #0f8d16;
+		border-radius: 6px;
+		box-shadow: inset rgba(255, 255, 255, 0.4) 0 1px 0;
+		color: #f0f0f0;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 1em;
+		font-weight: bold;
+		padding: 4px 8px 5px 8px;
+		position: relative;
+		text-shadow: rgba(0, 0, 0, 0.5) 0 -1px 1px;
+		width: auto;
+	}
+	
+	input[type='submit']:hover {
+		background-color: #18904b;
+		background-image: -moz-linear-gradient(#21aa2d 43%, #0e8e15 100%);
+		background-image: -o-linear-gradient(#21aa2d 43%, #0e8e15 100%);
+		background-image: -webkit-linear-gradient(#21aa2d 43%, #0e8e15 100%);
+		background-image: linear-gradient(#21aa2d 43%, #0e8e15 100%);
+	}
+
+/* Begin form validation error bubble for Webkit */
+
+@-webkit-keyframes bounce {
+	0% {
+		opacity: 0.5;
+		margin-left: 22px;
+	}
+	
+	25% {
+		margin-left: -22px;
+	}
+	
+	50% {
+		margin-left: 11px;
+	}
+	
+	100% {
+		margin-left: -15px;
+		opacity: 0.9;
+	}
+}
+
+::-webkit-validation-bubble {
+	-webkit-animation: bounce 0.3s 1;
+	-webkit-animation-timing-function: ease;
+	line-height: 0;
+	margin-left: -15px;
+	opacity: 0.9;
+}
+
+::-webkit-validation-bubble-message {
+	background-color: #e51b00;
+	background-image: -webkit-linear-gradient(#e51b00 43%, #ba1600 100%);
+    border: 1px solid #9f1300;
+	-webkit-border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.65) 0 2px 7px,
+						inset rgba(255, 60, 60, 1) 0 1px 0px;
+	color: #f3f3f3;
+	font-family: 'helvetica nueue', arial, sans-serif;
+	font-size: 1.24em;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1em;
+    min-width: 50px;
+    max-width: 300px;    
+    padding: 6px 10px 7px 10px;
+	text-shadow: #901100 0 -1px 0;
+	top: -7px;
+}
+
+::-webkit-validation-bubble-arrow {
+	background-color: #e51b00;
+	border: 1px solid #9f1300;
+	border-right: none;
+	border-bottom: none;
+    -webkit-box-shadow: none;
+    display: inline-block;
+	height: 12px;
+	left: 20px;
+    position: relative;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotate(45deg);
+    width: 12px;
+}
+
+::-webkit-validation-bubble-arrow-clipper {
+    display: block;
+	height: 16px;
+    overflow: hidden;
+}
+
+/* Begin form validation error styles for Firefox */
