@@ -5,9 +5,10 @@
 	<title>HTML Constraint Validation API</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../errorStyles/errors.css">
 </head>
 <body>
-	<form action="#" method="post">
+	<form action="#" method="post" novalidate>
 		<fieldset>
 			<div>
 				<label for="name" class="required">Name</label>
@@ -28,9 +29,31 @@
 	</form>
 	
 	<script>
-		document.querySelector('body').onload = function () {
+		var form   = document.forms[0],
+			inputs = document.getElementsByTagName('input');
+		
+		form.onsubmit = function () {
+			for (var i = 0, len = inputs.length; i < len; i += 1) {
+				var input = inputs[i];
+				
+				// Don't check the validity of the submit button.
+				if (input.getAttribute('type') !== 'submit') {
+					input.checkValidity();
+					
+					if (!input.validity.valid) {
+						console.log(input.validationMessage);
+						return false;
+					}
+					
+					input.addEventListener('invalid', function () {
+						
+					}, true);
+				}
+			}
 			
-		};
+			return false;
+		}
+
 	</script>
 </body>
 </html>
