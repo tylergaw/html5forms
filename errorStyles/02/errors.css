@@ -1,0 +1,82 @@
+/* Begin form validation error bubble for Webkit */
+
+@-webkit-keyframes bounce {
+	0% {
+		opacity: 0.5;
+		margin-top: -8.5em;
+	}
+	
+	25% {
+		margin-top: -2.5em;
+	}
+	
+	50% {
+		margin-top: -6.8em;
+	}
+	
+	75% {
+		margin-top: -4.4em;
+	}
+	
+	100% {
+		margin-top: -5.8em;
+		opacity: 0.9;
+	}
+}
+
+::-webkit-validation-bubble {
+	-webkit-animation-timing-function: ease;
+	-webkit-animation: bounce 0.45s 1;
+	line-height: 0;
+	margin-left: -1.2em;
+	margin-top: -5.8em;
+	opacity: 0.85;
+}
+
+::-webkit-validation-bubble-message {
+	background-color: #ffea00;
+	background-image: -webkit-linear-gradient(#ffea00 43%, #ffc600 100%);
+    border: 1px solid #ffc600;
+	-webkit-border-radius: 0;
+	box-shadow: rgba(0, 0, 0, 0.65) 0 0 4px,
+						inset rgba(255, 255, 255, 0.5) 0 1px 0px;
+	color: #000;
+	font-family: 'helvetica nueue', arial, sans-serif;
+	font-size: 1.1em;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1em;
+    min-width: 50px;
+    max-width: 300px;    
+    padding: 4px;
+	text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+	top: 0;
+}
+
+::-webkit-validation-bubble-arrow {
+	background-color: #ffc600;
+	border: 1px solid #ffc600;
+	border-left: none;
+	border-top: none;
+    -webkit-box-shadow: none;
+	height: 12px;
+	left: 12px;
+    position: relative;
+	top: 30px;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotate(45deg) scaleY(0.6);
+    width: 12px;
+}
+
+::-webkit-validation-bubble-arrow-clipper {
+    display: block;
+	height: 16px;
+    overflow: visible;
+}
+
+/* Overwrite moz default */
+input:invalid {	
+	box-shadow: none;
+
+	/* Moz default */
+	/* box-shadow: 0 0 1.5px 1px red; */
+}

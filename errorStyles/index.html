@@ -4,28 +4,54 @@
 	<meta charset="utf-8">
 	<title>HTML Form Validation Error Styles</title>
 	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="errors.css">
+	<style>
+		body {
+			background-color: #d2d2d2;
+			font-family: 'helvetica nueue', arial, sans-serif;
+			font-size: 100%;
+			min-width: 300px;
+		}
+		
+		div {
+			background-color: #f9f9f9;
+			background-image: -moz-linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+			background-image: -o-linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+			background-image: -webkit-linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+			background-image: linear-gradient(#f9f9f9 85%, #e2e2e2 100%);
+			border: 1px solid #bebebe;
+			border-radius: 8px;
+			margin: 20px auto 0 auto;
+			max-width: 420px;
+			padding: 16px 0;
+			width: 60%;
+		}
+		
+		h1 {
+			color: #353535;
+			font-size: 1.4em;
+			font-weight: bold;
+			padding: 0 20px;
+		}
+		
+		ul {
+			border-top: 1px solid #bebebe;
+			line-height: 1.4em;
+			margin-top: 1em;
+			padding: 1em 20px 0 20px;
+		}
+		
+		li {
+			list-style: disc inside;
+		}
+	</style>
 </head>
 <body>
-	<form action="#" method="post">
-		<fieldset>
-			<div>
-				<label for="name" class="required">Name</label>
-				<input type="text" id="name" name="name" required>
-			</div>
-			<div>
-				<label for="email" class="required">Email</label>
-				<input type="email" id="email" name="email" required>
-			</div>
-			<div>
-				<label for="password" class="required">Password</label>
-				<input type="password" id="password" name="password" required>
-			</div>
-			<div>
-				<input type="submit" name="submit" value="Skadoosh!">
-			</div>
-		</fieldset>
-	</form>
+	<div>
+		<h1>HTML Form validation error styles</h1>
+		<ul>
+			<li><a href="./01">Style 01</a></li>
+			<li><a href="./02">Style 02</a></li>
+		</ul>
+	</div>
 </body>
 </html>
