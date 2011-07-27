@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HTML Form Validation Error Styles, Style 03</title>
+	<script type="text/javascript" src="http://use.typekit.com/nyr0qms.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="base.css">
+	<link rel="stylesheet" href="errors.css">
+</head>
+<body>
+	<form action="#" method="post">
+		<fieldset>
+			<input type="email" id="email" name="email" placeholder="EMAIL" required>
+			<input type="password" id="password" name="password" placeholder="PASSWORD" required>
+			<div>
+				<input type="submit" name="submit" value="Skadoosh!">
+			</div>
+		</fieldset>
+	</form>
+	
+	<script>		
+		var inputs       = document.getElementsByTagName('input'),
+			len          = inputs.length,
+			i            = 0,
+			cur          = null,
+			requiredMsg  = 'required',
+			invalidEmail = 'invalid email';
+			
+		for (i; i < len; i += 1) {
+			
+			// Store the current input for convenience
+			cur = inputs[i];
+			
+			// We're not interested in submit buttons
+			if (cur.getAttribute('type') !== 'submit') {
+				
+				// We need to first set the custom message here in case
+				// the form is submitted without anything being entered
+				// into the inputs...
+				cur.setCustomValidity(requiredMsg);
+				
+				// ...Which will trigger this event that do the basic
+				// validation checks that we need
+				cur.oninput = function () {
+					
+					// Since both fields are required we'll check that
+					// the input has a value and then check for a 
+					// typeMismatch which will be true for inputs such
+					// as type="email" if a valid email address has not
+					// been entered
+					if (!this.value) {
+						// Again set our custom validation message
+						// A might bit annoying to have to do this in
+						// two places IMHO
+						this.setCustomValidity(requiredMsg);
+					
+					// If the value entered doesn't match the type of
+					// the input we'll provide a more specific message
+					// NOTE: I'm only accounting for the email type here
+					// to cover more types there would need to be some
+					// checking and switching of the input type to provide
+					// the appropriate message
+					} else if (this.validity.typeMismatch) {
+						
+						this.setCustomValidity(invalidEmail);
+					} else {
+						// If we're Ok we then need to set the custom
+						// validity message back to an empty string.
+						// This will allow the validation to act normal.
+						// Without this, the validity for the inputs
+						// never returns as true. Seems really odd to me
+						// that it works this way.
+						this.setCustomValidity('');
+					}
+					
+				}
+			}
+		}
+	</script>
+</body>
+</html>
