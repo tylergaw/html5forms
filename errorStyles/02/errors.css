@@ -47,10 +47,7 @@
 	width: 0;
 }
 
-::-webkit-validation-bubble-arrow {
-	display: none;
-}
-
+::-webkit-validation-bubble-arrow,
 ::-webkit-validation-bubble-arrow-clipper {
     display: none;
 }

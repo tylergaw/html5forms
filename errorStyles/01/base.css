@@ -76,3 +76,7 @@ input {
 		background-image: -webkit-linear-gradient(#21aa2d 43%, #0e8e15 100%);
 		background-image: linear-gradient(#21aa2d 43%, #0e8e15 100%);
 	}
+	
+	input[type='submit']:active {
+		padding: 5px 8px 4px 8px;
+	}
