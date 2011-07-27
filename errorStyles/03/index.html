@@ -20,7 +20,12 @@
 		</fieldset>
 	</form>
 	
-	<script>		
+	<script>
+		// While this looks like a large chunk of Javascript it's actually pretty basic.
+		// Most if it is comments explaining each step.
+		// All we're doing here is setting custom messages that will show for
+		// validation errors.
+			
 		var inputs       = document.getElementsByTagName('input'),
 			len          = inputs.length,
 			i            = 0,
@@ -45,15 +50,13 @@
 				// validation checks that we need
 				cur.oninput = function () {
 					
-					// Since both fields are required we'll check that
-					// the input has a value and then check for a 
-					// typeMismatch which will be true for inputs such
-					// as type="email" if a valid email address has not
-					// been entered
-					if (!this.value) {
+					// First check if this is a required field
+					// then check to see if it does not have a value
+					if (this.getAttribute('required') && !this.value) {
+						
 						// Again set our custom validation message
 						// A might bit annoying to have to do this in
-						// two places IMHO
+						// multiple places IMHO
 						this.setCustomValidity(requiredMsg);
 					
 					// If the value entered doesn't match the type of
@@ -66,6 +69,7 @@
 						
 						this.setCustomValidity(invalidEmail);
 					} else {
+						
 						// If we're Ok we then need to set the custom
 						// validity message back to an empty string.
 						// This will allow the validation to act normal.
