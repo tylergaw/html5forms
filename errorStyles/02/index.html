@@ -21,5 +21,56 @@
 			</div>
 		</fieldset>
 	</form>
+	
+	<script>		
+		var inputs = document.getElementsByTagName('input'),
+			len    = inputs.length,
+			i      = 0,
+			cur    = null,
+			errMsg = '!';
+			
+		for (i; i < len; i += 1) {
+			
+			// Store the current input for convenience
+			cur = inputs[i];
+			
+			// We're not interested in submit buttons
+			if (cur.getAttribute('type') !== 'submit') {
+				
+				// We need to first set the custom message here in case
+				// the form is submitted without anything being entered
+				// into the inputs...
+				cur.setCustomValidity(errMsg);
+				
+				// ...Which will trigger this event that do the basic
+				// validation checks that we need
+				cur.oninput = function () {
+					
+					// Since both fields are required we'll check that
+					// the input has a value and then check for a 
+					// typeMismatch which will be true for inputs such
+					// as type="email" if a valid email address has not
+					// been entered
+					if (!this.value || this.validity.typeMismatch) {
+						
+						// Again set our custom validation message
+						// A might bit annoying to have to do this in
+						// two places IMHO
+						this.setCustomValidity(errMsg);
+					} else {
+						
+						// If we're Ok we then need to set the custom
+						// validity message back to an empty string.
+						// This will allow the validation to act normal.
+						// Without this, the validity for the inputs
+						// never returns as true. Seems really odd to me
+						// that it works this way.
+						this.setCustomValidity('');
+					}
+					
+				}
+			}
+		}
+	</script>
 </body>
 </html>

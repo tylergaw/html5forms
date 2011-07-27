@@ -1,76 +1,58 @@
-/* Begin form validation error bubble for Webkit */
-
-@-webkit-keyframes bounce {
+@-webkit-keyframes slideIn {
 	0% {
-		opacity: 0.5;
-		margin-top: -8.5em;
-	}
-	
-	25% {
-		margin-top: -2.5em;
-	}
-	
-	50% {
-		margin-top: -6.8em;
-	}
-	
-	75% {
-		margin-top: -4.4em;
+		opacity: 0;
+		right: 400px;
 	}
 	
 	100% {
-		margin-top: -5.8em;
-		opacity: 0.9;
+		opacity: 1;
+		right: 0;
 	}
 }
 
 ::-webkit-validation-bubble {
-	-webkit-animation-timing-function: ease;
-	-webkit-animation: bounce 0.45s 1;
 	line-height: 0;
-	margin-left: -1.2em;
-	margin-top: -5.8em;
-	opacity: 0.85;
+	margin-top: -1.4em;
+	max-width: 360px;
+	opacity: 1;
+	overflow: hidden;
+	width: 51%;
 }
 
 ::-webkit-validation-bubble-message {
-	background-color: #ffea00;
-	background-image: -webkit-linear-gradient(#ffea00 43%, #ffc600 100%);
-    border: 1px solid #ffc600;
-	-webkit-border-radius: 0;
-	box-shadow: rgba(0, 0, 0, 0.65) 0 0 4px,
-						inset rgba(255, 255, 255, 0.5) 0 1px 0px;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation: slideIn 0.18s 1;
+	background-color: transparent;
+	background-image: none;
+	border-top: none;
+    border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 18px solid #ffea00;
+	-webkit-border-radius: 2px;
+	box-shadow: none;
 	color: #000;
+	float: right;
 	font-family: 'helvetica nueue', arial, sans-serif;
-	font-size: 1.1em;
+	font-size: 1.4em;
 	-webkit-font-smoothing: antialiased;
-	line-height: 1em;
-    min-width: 50px;
-    max-width: 300px;    
-    padding: 4px;
+	height: 0;
+	line-height: 1.3em;
+    min-width: 0;
+    max-width: auto;
+    padding: 0;
+	text-align: left;
+	text-indent: -2px;
 	text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
 	top: 0;
+	width: 0;
 }
 
 ::-webkit-validation-bubble-arrow {
-	background-color: #ffc600;
-	border: 1px solid #ffc600;
-	border-left: none;
-	border-top: none;
-    -webkit-box-shadow: none;
-	height: 12px;
-	left: 12px;
-    position: relative;
-	top: 30px;
-    -webkit-transform-origin: 0 0;
-    -webkit-transform: rotate(45deg) scaleY(0.6);
-    width: 12px;
+	display: none;
 }
 
 ::-webkit-validation-bubble-arrow-clipper {
-    display: block;
-	height: 16px;
-    overflow: visible;
+    display: none;
 }
 
 /* Overwrite moz default */
