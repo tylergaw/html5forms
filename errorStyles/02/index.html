@@ -5,6 +5,8 @@
 	<title>HTML Form Validation Error Styles, Style 02</title>
 	<link rel="stylesheet" href="../../css/reset.css">
 	<link rel="stylesheet" href="base.css">
+	
+	<!-- Yar! Good stuff be here scurvy dogs! -->
 	<link rel="stylesheet" href="errors.css">
 </head>
 <body>
@@ -22,7 +24,12 @@
 		</fieldset>
 	</form>
 	
-	<script>		
+	<script>
+		// While this looks like a large chunk of Javascript it's actually pretty basic.
+		// Most if it is comments explaining each step.
+		// All we're doing here is setting custom messages that will show for
+		// validation errors.
+		
 		var inputs = document.getElementsByTagName('input'),
 			len    = inputs.length,
 			i      = 0,
@@ -72,5 +79,11 @@
 			}
 		}
 	</script>
+	
+	<!-- 
+		We don't want the form submission to do anything this script
+		just throws up and alert then refreshes the page 
+	-->
+	<script src="../../js/formSubmit.js"></script>
 </body>
 </html>
