@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HTML Form Validation Error Styles, Default style</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="01/base.css">
+</head>
+<body>
+	<form action="#" method="post">
+		<fieldset>
+			<div>
+				<label for="email" class="required">Email</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div>
+				<label for="password" class="required">Password</label>
+				<input type="password" id="password" name="password" required>
+			</div>
+			<div>
+				<input type="submit" name="submit" value="Skadoosh!">
+			</div>
+		</fieldset>
+	</form>
+	
+	<!-- 
+		We don't want the form submission to do anything this script
+		just throws up and alert then refreshes the page 
+	-->
+	<script src="../../js/formSubmit.js"></script>
+</body>
+</html>
