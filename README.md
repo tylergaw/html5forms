@@ -12,4 +12,5 @@ A few links that have helped me.
  - [http://blog.oldworld.fr/index.php?post/2010/11/17/HTML5-Forms-Validation-in-Firefox-4](http://blog.oldworld.fr/index.php?post/2010/11/17/HTML5-Forms-Validation-in-Firefox-4)
 
 ### Constraint API
+ - [https://developer.mozilla.org/en/DOM/ValidityState](https://developer.mozilla.org/en/DOM/ValidityState)
  - [http://developers.whatwg.org/association-of-controls-and-forms.html#constraints](http://developers.whatwg.org/association-of-controls-and-forms.html#constraints)
