@@ -22,6 +22,7 @@
 	}
 }
 
+/* -- This is the main error bubble container -- */
 ::-webkit-validation-bubble {
 	-webkit-animation-timing-function: ease;
 	-webkit-animation: bounce 0.45s 1;
@@ -30,6 +31,7 @@
 	opacity: 0.9;
 }
 
+/* -- This the message container, and where most of the styling happens -- */
 ::-webkit-validation-bubble-message {
 	background-color: #e51b00;
 	background-image: -webkit-linear-gradient(#e51b00 43%, #ba1600 100%);
@@ -49,6 +51,7 @@
 	top: -7px;
 }
 
+/* -- This is...well...the bubble arrow if you want it -- */
 ::-webkit-validation-bubble-arrow {
 	background-color: #e51b00;
 	border: 1px solid #9f1300;
@@ -64,6 +67,10 @@
     width: 12px;
 }
 
+/* -- This is an extra element (<div>) that is used to mask the arrow
+ 	  when it has its default styles. It clips it so it doesn't show
+      on the bubble message.
+-- */
 ::-webkit-validation-bubble-arrow-clipper {
     display: block;
 	height: 16px;

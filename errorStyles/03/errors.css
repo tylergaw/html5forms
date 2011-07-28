@@ -1,3 +1,4 @@
+/* -- This is the main error bubble container -- */
 ::-webkit-validation-bubble {
 	line-height: 0;
 	margin-left: 0;
@@ -5,6 +6,7 @@
 	opacity: 1;
 }
 
+/* -- This the message container, and where most of the styling happens -- */
 ::-webkit-validation-bubble-message {
 	background-color: transparent;
 	background-image: none;
@@ -23,6 +25,9 @@
 	top: 0;
 }
 
+/* -- For this demo we don't need the arrow and because of that we
+      also don't need the arrow clipper.
+-- */
 ::-webkit-validation-bubble-arrow, 
 ::-webkit-validation-bubble-arrow-clipper {
 	display: none;
