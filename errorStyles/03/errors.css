@@ -2,8 +2,9 @@
 ::-webkit-validation-bubble {
 	line-height: 0;
 	margin-left: 0;
-	margin-top: -1.14em;
+	margin-top: -1.12em;
 	opacity: 1;
+	top: -1em;
 }
 
 /* -- This the message container, and where most of the styling happens -- */
@@ -21,6 +22,7 @@
     min-width: 50px;
     max-width: none;    
     padding: 0;
+	position: relative;
 	text-shadow: none;
 	top: 0;
 }

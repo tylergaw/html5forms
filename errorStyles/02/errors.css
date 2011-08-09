@@ -12,13 +12,13 @@
 }
 
 /* -- This is the main error bubble container -- */
-::-webkit-validation-bubble {
+::-webkit-validation-bubble {	
 	line-height: 0;
-	margin-top: -1.4em;
+	margin-top: -1.8em;
 	max-width: 360px;
 	opacity: 1;
 	overflow: hidden;
-	width: 51%;
+	width: 51.5%;
 }
 
 /* -- This the message container, and where most of the styling happens -- */
