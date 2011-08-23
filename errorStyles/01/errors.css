@@ -26,7 +26,6 @@
 ::-webkit-validation-bubble {
 	-webkit-animation-timing-function: ease;
 	-webkit-animation: bounce 0.45s 1;
-	line-height: 0;
 	margin-left: -15px;
 	opacity: 0.9;
 }
