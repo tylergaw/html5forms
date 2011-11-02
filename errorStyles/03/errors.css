@@ -35,6 +35,10 @@
 	display: none;
 }
 
+::-webkit-validation-bubble-icon {
+	display: none;
+}
+
 /* Overwrite moz default */
 input:invalid {	
 	box-shadow: none;
