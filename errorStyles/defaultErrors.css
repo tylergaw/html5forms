@@ -29,6 +29,14 @@
     z-index: 2147483644;
 }
 
+::-webkit-validation-bubble-text-block {
+    -webkit-box-flex: 1;
+}
+
+::-webkit-validation-bubble-heading {
+    font-weight: bold;
+}
+
 ::-webkit-validation-bubble-arrow {
     display: inline-block;
     position: relative;
@@ -55,12 +63,3 @@
 ::-webkit-validation-bubble-icon {}
 
 ::-webkit-validation-bubble-body {}
-
-::-webkit-validation-bubble-text-block {
-    -webkit-box-flex: 1;
-}
-
-::-webkit-validation-bubble-heading {
-    font-weight: bold;
-}
-
